@@ -1,4 +1,6 @@
 import "./index.css";
+import Astronauta from "./astronaut.png";
+import Rocket from "./rocket.png";
 
 const root = document.querySelector("#root");
 
@@ -6,10 +8,12 @@ const container = document.createElement("div");
 container.setAttribute("id", "container");
 
 // These will be images...
-const cohete = document.createElement("div");
+const cohete = document.createElement("img");
+cohete.src = Rocket;
 cohete.setAttribute("id", "cohete");
 
-const astronauta = document.createElement("div");
+const astronauta = document.createElement("img");
+astronauta.src = Astronauta;
 astronauta.setAttribute("id", "astronauta");
 
 const display = document.createElement("div");

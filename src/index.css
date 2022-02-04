@@ -20,34 +20,38 @@ body {
     to bottom,
     #1c242f 0%,
     #2c343f 49%,
-    #7f7f7f 51%,
-    #9f9f9f 100%
+    #afafaf 51%,
+    #afafaf 100%
   );
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   position: relative;
   overflow: hidden;
 }
 
+#cohete,
+#astronauta {
+  object-fit: contain;
+}
+
 #cohete {
   width: 15vh;
-  height: 30vh;
-  background-color: yellow;
+  background-color: transparent;
   position: absolute;
-  bottom: 20vh;
-  left: 60vw;
+  bottom: 28vh;
+  left: 50vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   will-change: transform;
+  filter: grayscale(0.6) brightness(1.5);
 }
 
 #astronauta {
-  width: 20vh;
-  height: 40vh;
-  background-color: white;
+  width: 25vh;
+  background-color: transparent;
   position: absolute;
-  bottom: -15vh;
-  left: 30vw;
+  bottom: 5vh;
+  left: 35vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   will-change: transform;
