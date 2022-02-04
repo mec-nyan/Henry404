@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  background-color: #2f2f2f;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#container {
+  background-image: linear-gradient(
+    to bottom,
+    #1c242f 0%,
+    #2c343f 49%,
+    #7f7f7f 51%,
+    #9f9f9f 100%
+  );
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#cohete {
+  width: 15vh;
+  height: 30vh;
+  background-color: yellow;
+  position: absolute;
+  bottom: 20vh;
+  left: 60vw;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+#astronauta {
+  width: 20vh;
+  height: 40vh;
+  background-color: white;
+  position: absolute;
+  bottom: -15vh;
+  left: 30vw;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+#display {
+  position: absolute;
+  color: yellow;
+}
