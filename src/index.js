@@ -12,9 +12,19 @@ const cohete = document.createElement("img");
 cohete.src = Rocket;
 cohete.setAttribute("id", "cohete");
 
-const astronauta = document.createElement("img");
-astronauta.src = Astronauta;
+const astronauta = document.createElement("div");
 astronauta.setAttribute("id", "astronauta");
+
+const astronautaImg = document.createElement("img");
+astronautaImg.src = Astronauta;
+
+const message = document.createElement("div");
+message.setAttribute("id", "message");
+
+message.innerHTML = "<span><b>404<br />Not found</b></span>";
+
+astronauta.appendChild(message);
+astronauta.appendChild(astronautaImg);
 
 const display = document.createElement("div");
 display.setAttribute("id", "display");
@@ -49,12 +59,12 @@ function handleHover(e) {
     coheteTransform += `translateX(${distance / ratioCohete}px) `;
     coheteTransform += `rotateY(${angle}deg)`;
     astronautaTransform += `translateX(${distance / ratioAstronauta}px) `;
-    astronautaTransform += `rotateY(${angle * -1}deg)`;
+    astronautaTransform += `rotateY(${angle}deg)`;
   } else {
     let distance = clientX - centerX;
-    let angle = -deformation * (distance / centerX);
+    let angle = deformation * (distance / centerX);
     coheteTransform += `translateX(-${distance / ratioCohete}px) `;
-    coheteTransform += `rotateY(${angle}deg)`;
+    coheteTransform += `rotateY(${angle * -1}deg)`;
     astronautaTransform += `translateX(-${distance / ratioAstronauta}px) `;
     astronautaTransform += `rotateY(${angle * -1}deg)`;
   }
