@@ -2,6 +2,7 @@ import "./index.css";
 import Astronauta from "./astronaut.png";
 import Rocket from "./rocket.png";
 import Logo from "./logo-white.png";
+import MecNyan from "./mecnyan.png";
 
 const root = document.querySelector("#root");
 
@@ -13,7 +14,25 @@ logo.src = Logo;
 logo.alt = "Henry";
 navBar.appendChild(logo);
 
+const sorryMessage = document.createElement("span");
+sorryMessage.setAttribute("class", "sorry");
+sorryMessage.innerHTML = "Sorry, we couldn't find what you've been looking for";
+
+navBar.appendChild(sorryMessage);
+
+const mec = document.createElement("img");
+mec.setAttribute("class", "avatar");
+mec.src = MecNyan;
+const login = document.createElement("div");
+login.appendChild(mec);
+
+navBar.appendChild(mec);
+
 root.appendChild(navBar);
+
+const separator = document.createElement("div");
+separator.setAttribute("id", "separator");
+root.appendChild(separator);
 
 const container = document.createElement("div");
 container.setAttribute("id", "container");
@@ -32,7 +51,8 @@ astronautaImg.src = Astronauta;
 const message = document.createElement("div");
 message.setAttribute("id", "message");
 
-message.innerHTML = "<span><b>404<br />Not found</b></span>";
+message.innerHTML = "<div class='big'>Oops!</div>";
+message.innerHTML += "<div>There's nothing here</div>";
 
 astronauta.appendChild(message);
 astronauta.appendChild(astronautaImg);
@@ -71,6 +91,7 @@ function handleHover(e) {
     coheteTransform += `rotateY(${angle}deg)`;
     astronautaTransform += `translateX(${distance / ratioAstronauta}px) `;
     astronautaTransform += `rotateY(${angle}deg)`;
+    container.style.backgroundPositionX = `${-5 + distance / 500}vw`;
   } else {
     let distance = clientX - centerX;
     let angle = deformation * (distance / centerX);
@@ -78,6 +99,7 @@ function handleHover(e) {
     coheteTransform += `rotateY(${angle * -1}deg)`;
     astronautaTransform += `translateX(-${distance / ratioAstronauta}px) `;
     astronautaTransform += `rotateY(${angle * -1}deg)`;
+    container.style.backgroundPositionX = `${-5 - distance / 500}vw`;
   }
 
   if (clientY < centerY) {
