@@ -2,11 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Cantarell", sans-serif;
+  font-family: "Lobster", cursive;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #1f1f1f;
 }
 
 #root {
@@ -18,15 +18,36 @@ body {
 
 #navbar {
   width: 100vw;
-  background-color: black;
+  color: white;
   overflow: hidden;
-  padding: 20px 40px;
-  border-bottom: 1px solid #3f3f3f;
+  height: 63px;
+  padding: 0px 40px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
 #logo {
   height: 20px;
-  background-color: black;
+  margin-right: auto;
+}
+
+.avatar {
+  height: 24px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.sorry {
+  font-family: "Cantarell";
+  font-size: 1em;
+}
+
+#separator {
+  width: 100vw;
+  height: 1px;
+  background-image: linear-gradient(to left, black, yellow, black);
 }
 
 #container {
@@ -39,22 +60,25 @@ body {
     #afafaf 100%
   );
   */
+  background-size: 110vw;
+  background-position: -5vw;
   background-image: radial-gradient(
       circle at 50% 1000%,
       transparent 0%,
       transparent 93.8%,
-      #3f4f5f 94%,
-      #1c242f 100%
+      #5f8dd3 94%,
+      #214478 94.5%,
+      #0b1728 100%
     ),
     radial-gradient(
       circle at 10%,
-      #deaa87 0%,
-      #d38d5f 70%,
-      #784421 71%,
+      #d35f5f 0%,
+      #784421 70%,
+      #502d16 71%,
       #917c6f 100%
     );
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -69,8 +93,8 @@ body {
   height: 25vh;
   background-color: transparent;
   position: absolute;
-  bottom: 20vh;
-  left: 52vw;
+  bottom: 25vh;
+  left: 55vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   will-change: transform;
@@ -78,10 +102,10 @@ body {
 }
 
 #astronauta {
-  width: 450px;
+  width: 730px;
   height: 300px;
   position: absolute;
-  bottom: 0vh;
+  bottom: 2vh;
   left: 20vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
@@ -93,7 +117,7 @@ body {
 
 #astronauta img {
   display: block;
-  width: 190px;
+  width: 300;
   height: auto;
   background-color: transparent;
 }
@@ -101,22 +125,32 @@ body {
 #display {
   position: absolute;
   color: yellow;
+  font-family: monospace;
+  font-size: 0.6em;
+  right: 10px;
+  top: 10px;
 }
 
 #message {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   width: 240px;
   height: 150px;
   position: relative;
-  bottom: 0px;
+  bottom: 50px;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 2.4em;
+  font-size: 1.5em;
   line-height: 60px;
-  color: #6f6f6f;
+  color: #784421;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+}
+
+.big {
+  font-size: 2em;
 }
 
 #message:after {
@@ -124,10 +158,10 @@ body {
   content: "";
   width: 20px;
   height: 20px;
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   position: absolute;
   top: 65px;
   left: 230px;
   transform: rotate(45deg);
-  z-index: -1;
+  z-index: 99;
 }
