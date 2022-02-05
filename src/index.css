@@ -6,25 +6,55 @@
 }
 
 body {
-  background-color: #2f2f2f;
+  background-color: #ffffff;
 }
 
 #root {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+#navbar {
+  width: 100vw;
+  background-color: black;
+  overflow: hidden;
+  padding: 20px 40px;
+  border-bottom: 1px solid #3f3f3f;
+}
+
+#logo {
+  height: 20px;
+  background-color: black;
 }
 
 #container {
+  /*
   background-image: linear-gradient(
     to bottom,
     #1c242f 0%,
-    #2c343f 49%,
+    #3f4f5f 49%,
     #afafaf 51%,
     #afafaf 100%
   );
+  */
+  background-image: radial-gradient(
+      circle at 50% 1000%,
+      transparent 0%,
+      transparent 93.8%,
+      #3f4f5f 94%,
+      #1c242f 100%
+    ),
+    radial-gradient(
+      circle at 10%,
+      #deaa87 0%,
+      #d38d5f 70%,
+      #784421 71%,
+      #917c6f 100%
+    );
   width: 100vw;
-  height: 70vh;
+  height: 50vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -36,10 +66,10 @@ body {
 }
 
 #cohete {
-  width: 15vh;
+  height: 25vh;
   background-color: transparent;
   position: absolute;
-  bottom: 28vh;
+  bottom: 20vh;
   left: 52vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
@@ -48,11 +78,11 @@ body {
 }
 
 #astronauta {
-  width: 550px;
+  width: 450px;
   height: 300px;
   position: absolute;
-  bottom: 5vh;
-  left: 15vw;
+  bottom: 0vh;
+  left: 20vw;
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   will-change: transform;
@@ -63,7 +93,7 @@ body {
 
 #astronauta img {
   display: block;
-  width: 200px;
+  width: 190px;
   height: auto;
   background-color: transparent;
 }
@@ -75,16 +105,16 @@ body {
 
 #message {
   background-color: #e0e0e0;
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 150px;
   position: relative;
-  bottom: 80px;
+  bottom: 0px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.4em;
   line-height: 60px;
   color: #6f6f6f;
 }
@@ -92,12 +122,12 @@ body {
 #message:after {
   display: block;
   content: "";
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: #e0e0e0;
   position: absolute;
-  top: 85px;
-  left: 285px;
+  top: 65px;
+  left: 230px;
   transform: rotate(45deg);
   z-index: -1;
 }
