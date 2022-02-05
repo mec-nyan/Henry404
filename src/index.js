@@ -1,8 +1,19 @@
 import "./index.css";
 import Astronauta from "./astronaut.png";
 import Rocket from "./rocket.png";
+import Logo from "./logo-white.png";
 
 const root = document.querySelector("#root");
+
+const navBar = document.createElement("div");
+navBar.setAttribute("id", "navbar");
+const logo = document.createElement("img");
+logo.setAttribute("id", "logo");
+logo.src = Logo;
+logo.alt = "Henry";
+navBar.appendChild(logo);
+
+root.appendChild(navBar);
 
 const container = document.createElement("div");
 container.setAttribute("id", "container");
